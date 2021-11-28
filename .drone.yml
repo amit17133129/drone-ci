@@ -12,14 +12,14 @@ steps:
   commands:
     - "date" 
   
-- name: publish  
-  image: plugins/docker 
-  settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-    repo: amitsharma17133129/drone_test
-    auto_tag: true
-    auto_tag_suffix: drone-build
+# - name: publish  
+#   image: plugins/docker 
+#   settings:
+#     username:
+#       from_secret: docker_username
+#     password:
+#       from_secret: docker_password
+#     repo: amitsharma17133129/drone_test
+#     auto_tag: true
+#     auto_tag_suffix: drone-build
  
