@@ -1,12 +1,33 @@
 
  
+# kind: pipeline
+# type: docker
+# name: test
+
+# steps:
+# - name: mydocker
+#   image: centos:7
+#   commands:
+#   - sleep 5
+ 
 kind: pipeline
-type: docker
-name: test
+type: kubernetes
+name: default
 
 steps:
-- name: mydocker
+ 
+- name: build
   image: centos:7
   commands:
-  - sleep 5
- 
+    - sleep 10
+  
+- name: publish  
+  image: plugins/docker 
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: amitsharma17133129/drone_test
+    auto_tag: true
+    auto_tag_suffix: drone-build
