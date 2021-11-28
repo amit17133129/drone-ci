@@ -10,7 +10,7 @@ steps:
 - name: build
   image: centos:7
   commands:
-    - "date" 
+    - sleep 10
   
 # - name: publish  
 #   image: plugins/docker 
