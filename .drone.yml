@@ -24,10 +24,12 @@
 #     auto_tag_suffix: drone-build
  
 kind: pipeline
-name: default
+type: docker
+name: test
+
 steps:
-  - name: test
-    image: golang
-    commands:
-      - go get
-      - go test
+- name: dist
+  image: node
+  commands:
+  - npm install
+  - npm run dist
