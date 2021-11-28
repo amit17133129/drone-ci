@@ -1,16 +1,16 @@
 #Drone CI File!
 #Commit Message: Drone! Captain Canary is here! 
 
-kind: pipeline
-type: kubernetes
-name: default
+# kind: pipeline
+# type: kubernetes
+# name: default
 
-steps:
+# steps:
    
-- name: build
-  image: centos:7
-  commands: 
-    - sleep 10
+# - name: build
+#   image: centos:7
+#   commands: 
+#     - sleep 10
   
 # - name: publish  
 #   image: plugins/docker 
@@ -23,3 +23,10 @@ steps:
 #     auto_tag: true
 #     auto_tag_suffix: drone-build
  
+kind: pipeline
+name: default
+steps:
+- name: test
+ image: golang:1.10-alpine
+ commands:
+   - "go test"
