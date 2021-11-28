@@ -29,8 +29,7 @@ name: test
 
 steps:
 - name: dist
-  image: node
+  image: centos:7
   commands:
-  - npm install
-  - npm run dist
+  - sleep 10
  
